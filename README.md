@@ -8,8 +8,10 @@ This set of Python scripts does the following :
 2. Using a graphical interface, inspect the bounding boxes and change their dimensions if needed. Saves the changes to the .json file.
 3. Render a new pdf file of the sheet music with a new layout, by changing pasting the systems using the coordinates in the .json file.
 
-Current usage :
+## Current usage :
+
 Recommended use of a virtual environment to install the python packages that are missing
+
 TODO : requirements file to automatically install dependencies
  
 1. Detect the systems
@@ -20,8 +22,12 @@ TODO : requirements file to automatically install dependencies
 `python music_layout_editor render sheet_music.pdf layout.json`
 
 TODO all steps : make the whole process graphical
+
 TODO step 3 : provide more options for the final layout (one system per page, many systems per page, ascribe a fixed aspect ratio (already possible I think)) etc
+
 TODO step 1 : check the robustness of the process for scans of real scores. Right now only tested on a clean typesetpdf edition.
+
 TODO step 2 : add more convenient shortcuts and ideas to the visual editor
+
 
 NB : vibe coded in a hurry. Lots of cleaning up to do probably.
