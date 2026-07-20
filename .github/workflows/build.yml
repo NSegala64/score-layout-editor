@@ -8,10 +8,10 @@ jobs:
   build-windows:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           
@@ -21,10 +21,10 @@ jobs:
           pip install PyMuPDF Pillow numpy pyinstaller
           
       - name: Build Windows exe
-        run: pyinstaller --noconsole --onefile --name "SheetMusicEditor" main_gui.py
+        run: pyinstaller --noconsole --onefile --hidden-import fitz --name "SheetMusicEditor" main_gui.py
         
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: SheetMusicEditor-Windows
           path: dist/SheetMusicEditor.exe
