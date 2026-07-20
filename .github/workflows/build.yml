@@ -1,0 +1,30 @@
+name: Build Executables
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install PyMuPDF Pillow numpy pyinstaller
+          
+      - name: Build Windows exe
+        run: pyinstaller --noconsole --onefile --name "SheetMusicEditor" main_gui.py
+        
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: SheetMusicEditor-Windows
+          path: dist/SheetMusicEditor.exe
