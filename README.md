@@ -1,7 +1,7 @@
 # Score Layout Editor
 
 This tool automates the process of identifying systems of staves in sheet music in order to change its layout.
-Possible use cases include generating sheet music videos, changing the aspect ratio of sheet music, or providing a preview of the next page at the bottom of the current page[cite: 4].
+Possible use cases include generating sheet music videos, changing the aspect ratio of sheet music, or providing a preview of the next page at the bottom of the current page.
 
 ## Features
 
